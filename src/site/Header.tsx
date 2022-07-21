@@ -1,9 +1,17 @@
-export const Header = () => {
-return (
-    <>
 
-Header
 
-    </>
-)
+type HeaderType = {
+    title: string
+}
+
+export const Header = (props: HeaderType) => {
+
+
+    return (
+        <>
+
+            {props.title}
+
+        </>
+    );
 };
