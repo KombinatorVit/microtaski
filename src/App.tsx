@@ -1,41 +1,32 @@
 import React, {MouseEvent} from 'react';
 import './App.css';
+import Button from './components/Button';
 
 
 function App() {
 
-    // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Hello, i am Vit');
-    // };
-    //
-    //
-    // const myTwoSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Kis Kis');
-    // };
 
-    const onClickHandler = (name: string) => {
-           console.log(name);
+    function Button1Foo(nameSubs: string, age: number, addres:string) {
+        console.log(nameSubs + age, 'city - ' + addres);
+    }
+
+    function Button2Foo(nameSubs:string, age:number) {
+        console.log(nameSubs + age);
 
     }
 
 
-
-    // const foo1 = () => {
-    //     console.log('100200');
-    // }
-    // const foo2 = (num: number) => {
-    //     console.log(`num: ${num}`)
-    // }
+    function ButtonConsolTypping() {
+        console.log('i AM typping button')
+    }
 
     return (
 
         <div className="App">
-            {/*<button onClick={(event) => {console.log('Hello');}}>MyYoutubeChanel-1</button>*/}
-            <button onClick={() => {onClickHandler('Vit')}}>MyYoutubeChanel-1</button>
-            <button name={'vit'} onClick={() => {onClickHandler('Misha')}}> MyYoutubeChanel-2</button>
+        <Button title={'MyYoutubeChanel-1'} callBack={()=>{Button1Foo('AAA', 21, 'Dnipro')}}/>
+            <Button title={'MyYoutubeChanel-2'} callBack={() => {Button2Foo('bbbbb', 28)}}/>
+<Button title={'I am typping button'} callBack={ButtonConsolTypping}/>
 
-            {/*<button onClick={foo1}>1</button>*/}
-            {/*<button onClick={() => {foo2(100200) }}>2</button>*/}
         </div>);
 
 }
