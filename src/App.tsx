@@ -1,32 +1,35 @@
-import React, {MouseEvent} from 'react';
+import React, {MouseEvent, useState} from 'react';
 import './App.css';
-import Button from './components/Button';
 
 
 function App() {
 
 
-    function Button1Foo(nameSubs: string, age: number, addres:string) {
-        console.log(nameSubs + age, 'city - ' + addres);
+    let [a, setA] = useState(1,);
+
+    function onclickHandler() {
+        setA(++a);
     }
 
-    function Button2Foo(nameSubs:string, age:number) {
-        console.log(nameSubs + age);
-
-    }
+    let [b] = useState(0,);
 
 
-    function ButtonConsolTypping() {
-        console.log('i AM typping button')
+    function resetHandler() {
+        setA(a =b)
     }
 
     return (
+        <div>
 
-        <div className="App">
-        <Button title={'MyYoutubeChanel-1'} callBack={()=>{Button1Foo('AAA', 21, 'Dnipro')}}/>
-            <Button title={'MyYoutubeChanel-2'} callBack={() => {Button2Foo('bbbbb', 28)}}/>
-<Button title={'I am typping button'} callBack={ButtonConsolTypping}/>
+            <h1>
+                <div>{a}
+                    <button onClick={onclickHandler}>number</button>
+                </div>
 
+                <div> {b}
+                    <button onClick={resetHandler}>number</button>
+                </div>
+            </h1>
         </div>);
 
 }
