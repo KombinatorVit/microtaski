@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import NewComponent from './components/NewComponent';
 import Button from './components/Button';
 
 //вернул коммит
@@ -16,7 +17,7 @@ function App() {
         {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
     ]);
     let currentMoney = money;
-    const[filter,setFilter]=useState('all')
+    const [filter, setFilter] = useState('all');
 
     if (filter === 'dollar') {
         currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'dollar');
@@ -25,28 +26,18 @@ function App() {
         currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'ruble');
     }
 
-    function onClickFilterHandler(nameButton: string) {
-        setFilter(nameButton)    }
+    function onClickFilterAppHandler(nameButton: string) {
+        setFilter(nameButton);
+    }
 
     return (
         <div>
 
-
-            <ul>
-                {currentMoney.map((objFromMoneyArr, index) => {
-                    return (
-                        <li key={index}>
-                            <span> {objFromMoneyArr.banknote}</span>
-                            <span> {objFromMoneyArr.nominal}</span>
-                            <span> {objFromMoneyArr.number}</span>
-                        </li>
-                    );
-                })}
-            </ul>
+            <NewComponent m={currentMoney}/>
             <div style={{marginLeft: '35px'}}>
-                <button onClick={() => onClickFilterHandler('all')}>all</button>
-                <button onClick={() => onClickFilterHandler('ruble')}>rubles</button>
-                <button onClick={() => onClickFilterHandler("dollar")}>dollars</button>
+                <Button callBack={() => onClickFilterAppHandler('all')}/>
+                <Button callBack={() => onClickFilterAppHandler('dollar')}/>
+                <Button callBack={() => onClickFilterAppHandler('ruble')}/>
             </div>
         </div>);
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 type ButtonType = {
-    title: string
     callBack: () => void
 }
 
@@ -13,10 +12,12 @@ function Button(props: ButtonType) {
 
     return (
         <div>
-            <button onClick={onClickHandler}>
-                {props.title}
+            <button onClick={onClickHandler}>all
             </button>
-
+            <button onClick={onClickHandler}>rubles
+            </button>
+            <button onClick={onClickHandler}>dollars
+            </button>
         </div>
     )
         ;
