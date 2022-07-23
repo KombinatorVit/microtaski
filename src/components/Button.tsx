@@ -2,6 +2,7 @@ import React from 'react';
 
 type ButtonType = {
     callBack: () => void
+    name: string
 }
 
 function Button(props: ButtonType) {
@@ -11,16 +12,14 @@ function Button(props: ButtonType) {
     };
 
     return (
+
         <div>
-            <button onClick={onClickHandler}>all
+            <button onClick={onClickHandler}> {props.name}
             </button>
-            <button onClick={onClickHandler}>rubles
-            </button>
-            <button onClick={onClickHandler}>dollars
-            </button>
+
         </div>
     )
-        ;
+
 }
 
 export default Button;

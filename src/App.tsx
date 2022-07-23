@@ -34,12 +34,12 @@ function App() {
         <div>
 
             <NewComponent m={currentMoney}/>
-            <div style={{marginLeft: '35px'}}>
-                <Button callBack={() => onClickFilterAppHandler('all')}/>
-                <Button callBack={() => onClickFilterAppHandler('dollar')}/>
-                <Button callBack={() => onClickFilterAppHandler('ruble')}/>
-            </div>
-        </div>);
+            <div style={{marginLeft: '35px', display: 'flex'}}>
+                <Button name={'all'} callBack={() => onClickFilterAppHandler('all')}/>
+                <Button name={'dollar'}callBack={() => onClickFilterAppHandler('dollar')}/>
+                <Button name={'ruble'} callBack={() => onClickFilterAppHandler('ruble')}/>
+        </div>
+</div>);
 }
 
 export default App;
