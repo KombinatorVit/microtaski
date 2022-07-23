@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Button from './components/Button';
 
-
+//вернул коммит
 function App() {
 
     const [money, setMoney] = useState([
