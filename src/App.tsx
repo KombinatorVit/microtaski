@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import {FullInput} from './components/FullInput';
+import {Button} from './components/Button';
+import {Input} from './components/Input';
 
 
 //вернул коммит
@@ -29,7 +31,11 @@ function App() {
 
     return (
         <div className={'App'}>
-            <FullInput addInputValue={addInputValue}/>
+            {/*<FullInput addInputValue={addInputValue}/>*/}
+        <div>
+            <Input />
+            <Button />
+        </div>
 
             {message.map((el, index) => {
                 return (
