@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import {FullInput} from './components/FullInput';
 
 
 //вернул коммит
@@ -14,13 +15,21 @@ function App() {
     );
 
 
+    const addInputValue = (title: string) =>{
+        let newMessage = {message: title}
+
+        const  newMessages = [newMessage, ...message]
+        setMessage(newMessages)
+
+        // или вариант Игоря
+            //         let newMessage = {message: title}
+        // setMessage([...message, newMessage] )
+    }
+
+
     return (
         <div className={'App'}>
-            <div>
-                <input/>
-                <button> +</button>
-
-            </div>
+            <FullInput addInputValue={addInputValue}/>
 
             {message.map((el, index) => {
                 return (
