@@ -30,8 +30,8 @@ function App() {
     };
 
     const callBackButtonHandler = () => {
-        addInputValue(title)
-        setTitle('')
+        addInputValue(title);
+        setTitle('');
     };
 
     return (
